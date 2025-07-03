@@ -1,0 +1,4 @@
+{
+  "preset": "conventionalcommits",
+  "branches": ["main"]
+}

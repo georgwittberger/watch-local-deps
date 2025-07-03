@@ -1,0 +1,54 @@
+{
+  "name": "@georgwittberger/watch-local-deps",
+  "version": "0.0.0-development",
+  "description": "CLI to automatically reinstall local dependencies on changes",
+  "keywords": [
+    "cli",
+    "dependencies",
+    "development",
+    "local",
+    "reinstall",
+    "watch"
+  ],
+  "license": "MIT",
+  "author": "Georg Wittberger",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/georgwittberger/watch-local-deps.git"
+  },
+  "bugs": {
+    "url": "https://github.com/georgwittberger/watch-local-deps/issues"
+  },
+  "type": "module",
+  "files": [
+    "dist",
+    "LICENSE",
+    "README.md"
+  ],
+  "bin": {
+    "watch-local-deps": "./dist/main.js"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "rm -rf ./dist && tsc",
+    "dev": "tsc --watch",
+    "release": "npm run build && semantic-release --no-ci"
+  },
+  "engines": {
+    "node": ">=20.10.0",
+    "npm": ">=10.0.0"
+  },
+  "dependencies": {
+    "chokidar": "^4.0.3",
+    "consola": "^3.4.2",
+    "execa": "^9.6.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.10",
+    "conventional-changelog-conventionalcommits": "^9.0.0",
+    "semantic-release": "^24.2.6",
+    "typescript": "^5.8.3"
+  }
+}

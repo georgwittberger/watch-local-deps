@@ -1,0 +1,43 @@
+{
+  "$id": "https://raw.githubusercontent.com/georgwittberger/watch-local-deps/refs/tags/v1.0.0/config-schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "watch-local-deps configuration file schema",
+  "properties": {
+    "packages": {
+      "title": "Watched packages",
+      "description": "Packages to watch and their configurations.",
+      "type": "object",
+      "patternProperties": {
+        ".+": {
+          "title": "Watched package",
+          "description": "Configuration for a package to be watched.",
+          "type": "object",
+          "properties": {
+            "localDir": {
+              "title": "Local package directory",
+              "description": "Local directory to install the package from. Typically a local source code repository.",
+              "type": "string"
+            },
+            "watchDirs": {
+              "title": "Watched directories",
+              "description": "Directories within the local package directory to watch for changes. The package is installed every time a change is detected in any of these directories.",
+              "type": "array",
+              "items": { "type": "string" }
+            },
+            "installDebounceMs": {
+              "title": "Debounce time for installation",
+              "description": "Time in milliseconds to wait after the last change before installing the package.",
+              "type": "integer",
+              "default": 500,
+              "minimum": 0
+            }
+          },
+          "required": ["localDir", "watchDirs"],
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "required": ["packages"]
+}
