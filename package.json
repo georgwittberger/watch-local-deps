@@ -14,7 +14,7 @@
   "author": "Georg Wittberger",
   "repository": {
     "type": "git",
-    "url": "https://github.com/georgwittberger/watch-local-deps.git"
+    "url": "git+https://github.com/georgwittberger/watch-local-deps.git"
   },
   "bugs": {
     "url": "https://github.com/georgwittberger/watch-local-deps/issues"
