@@ -21,18 +21,18 @@
   },
   "type": "module",
   "files": [
-    "dist",
+    "bin",
     "LICENSE",
     "README.md"
   ],
   "bin": {
-    "watch-local-deps": "./dist/main.js"
+    "watch-local-deps": "bin/main.js"
   },
   "publishConfig": {
     "access": "public"
   },
   "scripts": {
-    "build": "rm -rf ./dist && tsc",
+    "build": "rm -rf bin && tsc",
     "dev": "tsc --watch",
     "release": "npm run build && semantic-release --no-ci"
   },
